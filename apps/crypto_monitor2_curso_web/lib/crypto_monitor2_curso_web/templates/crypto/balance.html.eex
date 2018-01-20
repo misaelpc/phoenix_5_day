@@ -1,0 +1,79 @@
+<div id="wrapper">
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="logo">
+        <h1><a href="#">Crypto Bank</a></h1>
+      </div>
+      <div id="menu">
+        <ul>
+          <li><a href="/" accesskey="1" title="">INICIO</a></li>
+          <li class="current_page_item"><a href="/bussines" accesskey="3" title="">NEGOCIOS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="extra_small" class="container">
+    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <div class="table-title">
+      <h3>Saldos</h3>
+    </div>
+    <table class="table-fill">
+      <thead>
+        <tr>
+          <th class="text-left">Crypto Moneda</th>
+          <th class="text-left">Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>USD</td>
+          <td><%= render_number(@user_info.usd) %></td>
+        </tr>
+        <tr>
+          <td>BTC</td>
+          <td><%= render_number(@user_info.btc) %></td>
+        </tr>
+        <tr>
+          <td>ETH</td>
+          <td><%= render_number(@user_info.eth) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="extra_small" class="container">
+    <div class="testbox">
+      <h1>ETHERUM</h1> 
+      <label id="ethBuyPrice">0.0 USD</label>
+      <hr>
+      <div class="centered">
+        <%= form_for @changeset, "/buy/eth", fn f -> %>
+        <%= number_input f, :quantity, class: "input" %>
+        <button class="buyButton" action="submit">Comprar</button>
+        <% end %>
+      </div>
+      <P>
+      <div class="centered">
+        <%= form_for @changeset, "/sell/eth", fn f -> %>
+        <%= number_input f, :quantity, class: "input" %>
+        <button class="buyButton" action="submit">Vender</button>
+        <% end %>
+      </div>
+      <p>
+      <h1>BITCOIN</h1>
+      <label id="btcBuyPrice">0.0 USD</label>
+      <hr>
+      <div class="centered">
+        <%= form_for @changeset, "/buy/btc", fn f -> %>
+        <%= number_input f, :quantity, class: "input",autofocus: "autofocus" %>
+        <button class="buyButton" action="submit">Comprar</button>
+        <% end %>
+      </div>
+      <P>
+      <div class="centered">
+        <%= form_for @changeset, "/sell/btc", fn f -> %>
+        <%= number_input f, :quantity, class: "input" %>
+        <button class="buyButton" action="submit">Vender</button>
+        <% end %>
+      </div>
+</div>

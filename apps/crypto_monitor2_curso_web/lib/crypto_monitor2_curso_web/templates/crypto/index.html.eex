@@ -1,0 +1,23 @@
+<div id="wrapper">
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="logo">
+        <h1><a href="#">Crypto Bank</a></h1>
+      </div>
+      <div id="menu">
+        <ul>
+          <li class="current_page_item"><a href="/" accesskey="1" title="">INICIO</a></li>
+          <li><a href="/bussines" title="">NEGOCIOS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="extra" class="container">
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <title>Table Style</title>
+        <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+      </head>
+  </div>
+</div>
